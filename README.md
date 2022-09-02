@@ -14,7 +14,7 @@ This project was generated using [Nx](https://nx.dev).
 
 ## Introduction
 
-This project is a simple web app for front full-stack developer candidates.
+This project is a simple web app for full-stack developer candidates.
 
 The project was generated using [Nx](https://nx.dev) to provide a modern integrated dev experience.
 
