@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Alert from '@mui/material/Alert';
 import TaskIcon from '@mui/icons-material/Task';
 import { ReviewExt } from 'apps/reviews-api/src/reviews/reviews.types';
+import './reviews-list.css';
 
 export interface ReviewsListProps {}
 
@@ -38,15 +39,15 @@ export function ReviewsList(props: ReviewsListProps) {
 	}
 
 	return (
-		<div>
+		<div className="reviews-container">
 			{reviews.map((review) => (
-				<div key={review.id}>
-					<p>
+				<div key={review.id} className="review-card">
+					<p className="review-info">
 						{review.user.email} reviewed {review.company.name} on{' '}
 						{new Date(review.createdOn).toLocaleDateString()}
 					</p>
-					<p>Review: {review.reviewText}</p>
-					<p>Rating: {review.rating}</p>
+					<p className="review-text">Review: {review.reviewText}</p>
+					<p className="review-rating">Rating: {review.rating}</p>
 				</div>
 			))}
 		</div>
