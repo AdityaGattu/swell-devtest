@@ -81,51 +81,14 @@ describe('ReviewsController', () => {
 	});
 
 	describe('getReviews()', () => {
-		//it.todo('should fetch all reviews');
-		it('should fetch all reviews', async () => {
-			const response = await request(app.getHttpServer()).get('/reviews');
-			expect(response.status).toBe(200);
-			expect(response.body.reviews).toHaveLength(3);
-		});
+		it.todo('should fetch all reviews');
 
-		//it.todo('should fetch reviews in descending order by date');
-		it('should fetch reviews in descending order by date', async () => {
-			const response = await request(app.getHttpServer()).get('/reviews');
-			expect(response.status).toBe(200);
+		it.todo('should fetch reviews in descending order by date');
 
-			const reviews = response.body.reviews;
-			let isSortedDesc = true;
+		it.todo('should include user data with review');
 
-			for (let i = 0; i < reviews.length - 1; i++) {
-				if (new Date(reviews[i].createdOn) < new Date(reviews[i + 1].createdOn)) {
-					isSortedDesc = false;
-					break;
-				}
-			}
+		it.todo('should include company data with review');
 
-			expect(isSortedDesc).toBe(true);
-		});
-
-		//it.todo('should include user data with review');
-		it('should include user data with review', async () => {
-			const response = await request(app.getHttpServer()).get('/reviews');
-			expect(response.status).toBe(200);
-			response.body.reviews.forEach((review) => {
-				expect(review.user).toBeDefined();
-				expect(review.user.id).toBeDefined();
-				expect(review.user.email).toBeDefined();
-			});
-		});
-
-		//it.todo('should include company data with review');
-		it('should include company data with review', async () => {
-			const response = await request(app.getHttpServer()).get('/reviews');
-			expect(response.status).toBe(200);
-			response.body.reviews.forEach((review) => {
-				expect(review.company).toBeDefined();
-				expect(review.company.id).toBeDefined();
-				expect(review.company.name).toBeDefined();
-			});
-		});
+		// Feel free to add any additional tests you think are necessary
 	});
 });
